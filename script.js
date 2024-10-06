@@ -148,13 +148,6 @@ amountInput.addEventListener("change", () => {
 })
 
 
-buttonCorrectElem.addEventListener("touchstart", () => {
-  handle_press(1)
-})
-buttonWrongElem.addEventListener("touchstart", () => {
-  handle_press(0)
-})
-
 buttonCorrectElem.addEventListener("mousedown", () => {
   handle_press(1)
 })
