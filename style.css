@@ -38,7 +38,8 @@ body {
   flex-direction: column;
   gap:6px;
   align-items: center;
-
+  text-align: center;
+  line-height:130%;
 }
 
 .interface > p {
