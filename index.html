@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Pierwiastki Fiszki</title>
+</head>
+<body>
+  <div class="interface">
+    <p>Pierwiastki do zgadnięcia <input type="number" min="10" max="118" id="amount"></p>
+    <div class="switch" id="switch">
+      <button class="arrow left_arrow" id="left_arrow"><<</button>
+      <button class="arrow right_arrow" id="right_arrow">>></button>
+      <div class="options">
+        <p class="option">Zgaduj Symbol</p>
+        <p class="option">Zgaduj Nazwę</p>
+      </div>
+    </div>
+    <p>Pozostałe pierwiastki: <span id="counter">118</span></p>
+    <p>Celność: <span id="accuracy">0</span>%</p>
+    <div class="card">
+      <div class="element" id="element">
+        <p class="nr" id="nr">Fisz</p>
+        <p class="sign" id="sign">Ki</p>
+      </div>
+      <p class="name" id="name">Mendelejewa</p>
+    </div>
+    <button id="button"></button>
+  </div>
+  <script src="./script.js"></script>
+</body>
+</html>

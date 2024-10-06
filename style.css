@@ -1,0 +1,219 @@
+* {
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+  /* border: 1px solid rgba(255,255,255,0.4); */
+}
+
+body, html {
+  width:100vw;
+  height:100vh;
+  overflow: hidden;
+}
+
+body {
+  background-color: #232334;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.interface {
+  width:360px;
+  padding:6px;
+  border-radius: 20px;
+  display:flex;
+  flex-direction: column;
+  gap:6px;
+  align-items: center;
+
+}
+
+.interface > p {
+  color:white;
+  font-family: monospace;
+}
+
+.interface > button {
+  width:32px;
+  height:32px;
+  border-radius:50%;
+  background-color:rgb(210,31,58);
+  border: 3px solid rgb(128, 5, 5);
+  box-shadow: black 0px 0px 10px;
+  transition: scale 0.3s ease-in-out;
+}
+.interface > button:active, .interface > button.pressed {
+  background-color:rgb(151, 19, 39);
+}
+.interface > button:focus {
+  outline: 2px solid white;
+  scale: 1.1;
+}
+
+.interface p > input {
+  border: 4px solid grey;
+  padding: 2px;
+}
+.interface p > input:focus{
+  border: 4px solid grey;
+  outline: 2px solid white;
+}
+
+.switch {
+  font-family: monospace;
+  font-size:12px;
+  display:flex;
+  gap: 8px;
+  align-items: center;
+  position:relative;
+  padding:2px;
+  max-width: 104px;
+}
+
+.switch.margin .options .option:nth-child(1) {
+  margin-left: -108px;
+}
+
+.switch .arrow {
+  width:36px;
+  height:36px;
+  position:absolute;
+  color:white;
+  font-weight: 900;
+  background-color:transparent;
+  border: none;
+  font-size: 10px;
+  padding: 10px;
+  user-select: none;
+  cursor:pointer;
+  text-shadow: 0 0 5px grey;
+  transition: scale 0.1s ease-in-out, color 0.5s ease-in-out;
+}
+
+.switch .arrow:hover {
+  scale:1.3;
+  color: cyan;
+}
+
+.switch .arrow:focus {
+  outline: none;
+  scale:1.3;
+  color: cyan;
+}
+
+.switch .arrow:active {
+  scale:1.5;
+  transition: scale 0s ease-in-out, color 0.5s ease-in-out, 
+}
+
+.switch .left_arrow {
+  left:-36px;
+  animation: left_move 5s ease-in-out infinite
+}
+
+.switch .right_arrow {
+  right:-36px;
+  animation: right_move 5s ease-in-out infinite
+}
+
+@keyframes left_move {
+  0% {
+    left: -30px;
+  }
+  50% {
+    left: -42px;
+  }
+  100% {
+    left: -30px;
+  }
+}
+
+@keyframes right_move {
+  0% {
+    right: -30px;
+  }
+  50% {
+    right: -42px;
+  }
+  100% {
+    right: -30px;
+  }
+}
+
+.switch .options {
+  display:flex;
+  gap:8px;
+  align-items: center;
+  overflow: hidden;
+  user-select: none;
+
+}
+
+.switch .option {
+  background-color:white;
+  border: 4px solid grey;
+  min-width:100px;
+  text-align: center;
+  transition: margin-left 0.5s ease-in-out;
+}
+
+
+.card {
+  width:100%;
+  height:240px;
+  padding:20px;
+  position:relative;
+  display:flex;
+  flex-direction: column;
+  gap:12px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.card .name {
+  color:black;
+  font-family: monospace;
+  min-width: 64px;
+  text-align: center;
+  background-color: white;
+  transition: color 0.1s ease-in-out;
+  outline: 4px solid grey
+}
+
+.card .name.censored {
+  color:white;
+  background-color: white;
+  transition: color 0s ease-in-out;
+}
+
+.element {
+  background-color: white;
+  width:64px;
+  height:64px;
+  position: relative;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: color 0.1s ease-in-out;
+  outline: 4px solid grey;
+  scale:1;
+}
+
+.element.censored {
+  color:white;
+  background-color: white;
+  transition: color 0s ease-in-out;
+}
+
+.element .nr {
+  position:absolute;
+  left:3px;
+  top:0;
+}
+
+.element .sign {
+  font-size: 2em;
+}
