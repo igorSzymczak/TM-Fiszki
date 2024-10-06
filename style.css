@@ -181,7 +181,7 @@ body {
 }
 
 .switch .option {
-  background-color:white;
+  background-color:white !important;
   border: 6px solid grey;
   min-width:180px;
   text-align: center;
@@ -208,19 +208,19 @@ body {
   font-family: monospace;
   min-width: 128px;
   text-align: center;
-  background-color: white;
+  background-color: white !important;
   transition: color 0.1s ease-in-out;
   outline: 8px solid grey
 }
 
 .card .name.censored {
-  color:white;
-  background-color: white;
+  color:white !important;
+  background-color: white !important;
   transition: color 0s ease-in-out;
 }
 
 .element {
-  background-color: white;
+  background-color: white !important;
   width:128px;
   height:128px;
   position: relative;
@@ -234,8 +234,8 @@ body {
 }
 
 .element.censored {
-  color:white;
-  background-color: white;
+  color:white !important;
+  background-color: white !important;
   transition: color 0s ease-in-out;
 }
 
