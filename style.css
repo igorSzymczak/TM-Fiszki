@@ -208,19 +208,19 @@ body {
   font-family: monospace;
   min-width: 128px;
   text-align: center;
-  background-color: white !important;
-  transition: color 0.1s ease-in-out;
-  outline: 8px solid grey
+  background-color: white;
+  transition: opacity 0.1s ease-in-out;
+  outline: 8px solid grey;
+  opacity:1;
 }
 
 .card .name.censored {
-  color:white !important;
-  background-color: white !important;
-  transition: color 0s ease-in-out;
+  transition: opacity 0s ease-in-out;
+  opacity:0;
 }
 
 .element {
-  background-color: white !important;
+  background-color: white;
   width:128px;
   height:128px;
   position: relative;
@@ -228,15 +228,15 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  transition: color 0.1s ease-in-out;
+  transition: opacity 0.1s ease-in-out;
   outline: 8px solid grey;
   scale:1;
+  opacity:1;
 }
 
 .element.censored {
-  color:white !important;
-  background-color: white !important;
-  transition: color 0s ease-in-out;
+  opacity: 0;
+  transition: opacity 0s ease-in-out;
 }
 
 .element .nr {
