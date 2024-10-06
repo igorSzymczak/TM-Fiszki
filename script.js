@@ -126,7 +126,8 @@ const rightArrowElem = document.querySelector("#right_arrow")
 const counterElem = document.querySelector("#counter")
 const accuracyElem = document.querySelector("#accuracy")
 
-const buttonElem = document.querySelector("#button")
+const buttonCorrectElem = document.querySelector("#button_correct")
+const buttonWrongElem = document.querySelector("#button_wrong")
 
 const elementElem = document.querySelector("#element")
 const nrElem = document.querySelector("#nr")
@@ -147,34 +148,42 @@ amountInput.addEventListener("change", () => {
 })
 
 
-buttonElem.addEventListener("keydown", (e) => {
-  if( (e.key=="ArrowDown" || e.key=="ArrowUp") && !pressed) {
-    buttonElem.classList.add("pressed")
-    pressed = true
-    handle_press(e.key=="ArrowDown" ? 0 : 1)
-  }
+buttonCorrectElem.addEventListener("touchstart", () => {
+  handle_press(1)
 })
-buttonElem.addEventListener("keyup", () => {
-  if(pressed) {
-    buttonElem.classList.remove("pressed")
-    pressed = false
-  }
-})
-buttonElem.addEventListener("mousedown", () => {
+buttonWrongElem.addEventListener("touchstart", () => {
   handle_press(0)
 })
 
-document.body.addEventListener("keydown", (e) => {
-  if( (e.key=="ArrowDown" || e.key=="ArrowUp") && !pressed) {
-    buttonElem.classList.add("pressed")
-    pressed = true
-    handle_press(e.key=="ArrowDown" ? 0 : 1)
+buttonCorrectElem.addEventListener("mousedown", () => {
+  handle_press(1)
+})
+buttonWrongElem.addEventListener("mousedown", () => {
+  handle_press(0)
+})
+
+document.body.addEventListener("keydown", e => {
+  if(!pressed) {
+    if (e.key == "ArrowRight") {
+      buttonCorrectElem.classList.add("pressed")
+      pressed = true
+      handle_press(1)
+    } else if (e.key == "ArrowLeft") {
+      buttonWrongElem.classList.add("pressed")
+      pressed = true
+      handle_press(0)
+    }
   }
 })
-document.body.addEventListener("keyup", () => {
+document.body.addEventListener("keyup", e => {
   if(pressed) {
-    buttonElem.classList.remove("pressed")
-    pressed = false
+    if (e.key == "ArrowRight") {
+      buttonCorrectElem.classList.remove("pressed")
+      pressed = false
+    } else if (e.key == "ArrowLeft") {
+      buttonWrongElem.classList.remove("pressed")
+      pressed = false
+    }
   }
 })
 
@@ -292,5 +301,3 @@ function randomize_element(state) {
     tries = -1
   }
 }
-
-buttonElem.focus()

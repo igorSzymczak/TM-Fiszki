@@ -16,10 +16,22 @@ body {
   display:flex;
   align-items: center;
   justify-content: center;
+  position:relative;
+  font-size:1.5em;
+}
+
+.info {
+  position:absolute;
+  z-index: 0;
+  color:white;
+  top:32px;
+  font-family: monospace;
+  font-size:12px;
+  text-align: center;
 }
 
 .interface {
-  width:360px;
+  width:100%;
   padding:6px;
   border-radius: 20px;
   display:flex;
@@ -34,26 +46,44 @@ body {
   font-family: monospace;
 }
 
-.interface > button {
-  width:32px;
-  height:32px;
+.buttons {
+  display:flex;
+  gap:36px;
+}
+
+.buttons button {
+  width:64px;
+  height:64px;
   border-radius:50%;
-  background-color:rgb(210,31,58);
-  border: 3px solid rgb(128, 5, 5);
   box-shadow: black 0px 0px 10px;
   transition: scale 0.3s ease-in-out;
 }
-.interface > button:active, .interface > button.pressed {
+.button_wrong {
+  background-color:rgb(210,31,58);
+  border: 6px solid rgb(128, 5, 5);
+}
+.button_correct {
+  background-color:rgb(85, 196, 33);
+  border: 6px solid rgb(59, 139, 21);
+}
+
+
+.buttons .button_wrong:active, .buttons .button_wrong.pressed {
   background-color:rgb(151, 19, 39);
 }
-.interface > button:focus {
+.buttons .button_correct:active, .buttons .button_correct.pressed {
+  background-color:rgb(63, 145, 26);
+}
+
+.buttons button:focus {
   outline: 2px solid white;
   scale: 1.1;
 }
 
 .interface p > input {
-  border: 4px solid grey;
+  border: 6px solid grey;
   padding: 2px;
+  font-size:0.75em;
 }
 .interface p > input:focus{
   border: 4px solid grey;
@@ -62,28 +92,28 @@ body {
 
 .switch {
   font-family: monospace;
-  font-size:12px;
+  font-size:16px;
   display:flex;
   gap: 8px;
   align-items: center;
   position:relative;
   padding:2px;
-  max-width: 104px;
+  max-width: 184px;
 }
 
 .switch.margin .options .option:nth-child(1) {
-  margin-left: -108px;
+  margin-left: -188px;
 }
 
 .switch .arrow {
-  width:36px;
-  height:36px;
+  width:48px;
+  height:48px;
   position:absolute;
   color:white;
   font-weight: 900;
   background-color:transparent;
   border: none;
-  font-size: 10px;
+  font-size: 16px;
   padding: 10px;
   user-select: none;
   cursor:pointer;
@@ -104,40 +134,39 @@ body {
 
 .switch .arrow:active {
   scale:1.5;
-  transition: scale 0s ease-in-out, color 0.5s ease-in-out, 
 }
 
 .switch .left_arrow {
-  left:-36px;
+  left:-64px;
   animation: left_move 5s ease-in-out infinite
 }
 
 .switch .right_arrow {
-  right:-36px;
+  right:-64px;
   animation: right_move 5s ease-in-out infinite
 }
 
 @keyframes left_move {
   0% {
-    left: -30px;
+    left: -64px;
   }
   50% {
-    left: -42px;
+    left: -72px;
   }
   100% {
-    left: -30px;
+    left: -64px;
   }
 }
 
 @keyframes right_move {
   0% {
-    right: -30px;
+    right: -64px;
   }
   50% {
-    right: -42px;
+    right: -72px;
   }
   100% {
-    right: -30px;
+    right: -64px;
   }
 }
 
@@ -152,10 +181,11 @@ body {
 
 .switch .option {
   background-color:white;
-  border: 4px solid grey;
-  min-width:100px;
+  border: 6px solid grey;
+  min-width:180px;
   text-align: center;
   transition: margin-left 0.5s ease-in-out;
+  font-size:22px;
 }
 
 
@@ -166,7 +196,7 @@ body {
   position:relative;
   display:flex;
   flex-direction: column;
-  gap:12px;
+  gap:24px;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -175,11 +205,11 @@ body {
 .card .name {
   color:black;
   font-family: monospace;
-  min-width: 64px;
+  min-width: 128px;
   text-align: center;
   background-color: white;
   transition: color 0.1s ease-in-out;
-  outline: 4px solid grey
+  outline: 8px solid grey
 }
 
 .card .name.censored {
@@ -190,15 +220,15 @@ body {
 
 .element {
   background-color: white;
-  width:64px;
-  height:64px;
+  width:128px;
+  height:128px;
   position: relative;
   display:flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   transition: color 0.1s ease-in-out;
-  outline: 4px solid grey;
+  outline: 8px solid grey;
   scale:1;
 }
 
@@ -210,10 +240,11 @@ body {
 
 .element .nr {
   position:absolute;
-  left:3px;
-  top:0;
+  font-size:0.9em;
+  left:6px;
+  top:4px;
 }
 
 .element .sign {
-  font-size: 2em;
+  font-size: 2.5em;
 }

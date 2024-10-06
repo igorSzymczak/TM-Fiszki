@@ -8,8 +8,15 @@
   <link rel="manifest" href="./favicon/site.webmanifest" crossorigin="use-credentials" />
 </head>
 <body>
+  <div class="info">
+    <p><b>instrukcja</b></p>
+    <p>na pc, wcisnij strzalke w lewo, jesli nie zgadles, oraz strzalke w prawo, jesli zgadles poprawnie</p>
+    <p>na tel, uzywaj czerwonego przycisku, jesli nie zgadles, a zielonego, jesli zgadles</p>
+    <br>
+    <p><span style="color:greenyellow">aby zaczac</span>, wcisnij strzalke w lewo lub w prawo, albo dowolny przycisk, i jeszcze raz, aby odkryc fiszke</p>
+  </div>
   <div class="interface">
-    <p>Pierwiastki do zgadnięcia <input type="number" min="10" max="118" id="amount"></p>
+    <p>Pierwiastki do zgadnięcia: <input type="number" min="10" max="118" value="50" id="amount"></p>
     <div class="switch" id="switch">
       <button class="arrow left_arrow" id="left_arrow"><<</button>
       <button class="arrow right_arrow" id="right_arrow">>></button>
@@ -25,9 +32,12 @@
         <p class="nr" id="nr">Fisz</p>
         <p class="sign" id="sign">Ki</p>
       </div>
-      <p class="name" id="name">Mendelejewa</p>
+      <p class="name" id="name">Pierwiastków</p>
     </div>
-    <button id="button"></button>
+    <div class="buttons">
+      <button class="button_wrong" id="button_wrong"></button>
+      <button class="button_correct" id="button_correct"></button>
+    </div>
   </div>
   <script src="./script.js"></script>
 </body>
